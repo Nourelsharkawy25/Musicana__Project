@@ -1,0 +1,36 @@
+@baseUrl = https://localhost:7183
+
+### Get All Musicians
+GET {{baseUrl}}/api/Musician
+
+### Get Musician By Id
+GET {{baseUrl}}/api/Musician/1
+
+### Get Musician By Name
+GET {{baseUrl}}/api/Musician/j
+
+### Create Musician 
+POST {{baseUrl}}/api/Musician
+Content-Type: application/json
+
+{
+    "name": "Mickle Jackson",
+    "genre": "Bob",
+    "birthdate": "1988-03-02"
+}
+
+### Delete Musician 
+DELETE {{baseUrl}}/api/Musician/11
+
+### Edit Musician 
+PUT {{baseUrl}}/api/Musician/11
+Content-Type: application/json
+
+{
+    "name" : "Mickle Jackson",
+    "genre" : "Bob",
+    "birthdate":"1970-10-01"
+}
+
+### Get Songs
+GET {{baseUrl}}/api/Songs
