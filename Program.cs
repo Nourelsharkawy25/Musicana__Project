@@ -60,9 +60,10 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor |
                     ForwardedHeaders.XForwardedProto |
-                    ForwardedHeaders.XForwardedHost
+                    ForwardedHeaders.XForwardedHost,
+    KnownNetworks = { },
+    KnownProxies = { }
 });
-
 app.UseCors("AllowAll");
 
 using (var scope = app.Services.CreateScope())

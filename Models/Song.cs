@@ -11,8 +11,8 @@ public class Song
     public double Duration { get; set; }
     public string FilePath { get; set; }
     public bool IsDeleted { get; set; }
+    public string? CoverImagePath { get; set; }
     public int PlayCount { get; private set; }
     public List<Musician_Song> musician_Songs { get; set; }
-
     public void IncrementPlayCount() => PlayCount++;
 }

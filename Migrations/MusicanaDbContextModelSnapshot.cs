@@ -328,6 +328,10 @@ namespace Musicana.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CoverImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -362,6 +366,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 1,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 1",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -373,6 +378,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 2,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 2",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -384,6 +390,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 3,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 3",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -395,6 +402,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 4,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 4",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -406,6 +414,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 5,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 5",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -417,6 +426,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 6,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 6",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -428,6 +438,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 7,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 7",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -439,6 +450,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 8,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 8",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -450,6 +462,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 9,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 9",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",
@@ -461,6 +474,7 @@ namespace Musicana.Api.Migrations
                         new
                         {
                             Id = 10,
+                            CoverImagePath = "/CoverImages/cover1.jpg",
                             Description = "Description 10",
                             Duration = 0.0,
                             FilePath = "/Songs/song1.mp3",

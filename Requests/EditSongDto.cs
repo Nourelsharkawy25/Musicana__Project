@@ -17,8 +17,11 @@ public class EditSongDto
 
     [Required(ErrorMessage = "Genre is required")]
     [EnumDataType(typeof(SongGenres), ErrorMessage = "Invalid Song genre")]
-    public SongGenres Genre { get; set; } 
+    public SongGenres Genre { get; set; }
 
     [AllowedAudioExtensions]
-    public IFormFile? FormFile { get; set; } 
+    public IFormFile? FormFile { get; set; }
+
+    [AllowedImageExtensions]
+    public IFormFile? CoverImage { get; set; }
 }

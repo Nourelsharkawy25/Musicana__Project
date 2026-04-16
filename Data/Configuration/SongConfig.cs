@@ -16,6 +16,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
         builder.Property(s => s.Description).HasMaxLength(100);
         builder.Property(s => s.Genre).HasMaxLength(30).IsRequired();
         builder.Property(s => s.FilePath).IsRequired();
+        builder.Property(s => s.CoverImagePath).IsRequired();
         builder.Property(s => s.IsDeleted).IsRequired();
 
         builder.HasData(LoadData());
@@ -31,6 +32,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 1",
                 Description = "Description 1",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Rock
             },
@@ -40,6 +42,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 2",
                 Description = "Description 2",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Pop
             },
@@ -49,6 +52,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 3",
                 Description = "Description 3",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Jazz
             },
@@ -58,6 +62,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 4",
                 Description = "Description 4",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Classical
             },
@@ -67,6 +72,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 5",
                 Description = "Description 5",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Country
             },
@@ -76,6 +82,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 6",
                 Description = "Description 6",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Rock
             },
@@ -85,6 +92,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 7",
                 Description = "Description 7",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Classical
             },
@@ -94,6 +102,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 8",
                 Description = "Description 8",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.HipHop
             },
@@ -103,6 +112,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 9",
                 Description = "Description 9",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Metal
             },
@@ -112,6 +122,7 @@ public class SongConfig : IEntityTypeConfiguration<Song>
                 Title = "Song 10",
                 Description = "Description 10",
                 FilePath = "/Songs/song1.mp3",
+                CoverImagePath = "/CoverImages/cover1.jpg",
                 IsDeleted = false,
                 Genre = SongGenres.Rock
             }

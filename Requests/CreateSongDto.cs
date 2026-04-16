@@ -24,4 +24,9 @@ public class CreateSongDto
     [DataType(DataType.Upload)]
     [AllowedAudioExtensions]
     public IFormFile formFile { get; set; } = null!;
+
+    [DataType(DataType.Upload)]
+    [Required(ErrorMessage = "Cover image is required")]
+    [AllowedImageExtensions]
+    public IFormFile CoverImage { get; set; }
 }

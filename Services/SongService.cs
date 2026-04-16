@@ -30,6 +30,7 @@ public class SongService : ISongService
             Description = dto.Description,
             Duration = dto.Duration,
             FilePath = await SaveAudioFileAsync(dto.formFile),
+            CoverImagePath = await SaveCoverImageAsync(dto.CoverImage),
             IsDeleted = false,
         };
 
@@ -117,6 +118,16 @@ public class SongService : ISongService
             song.FilePath = await SaveAudioFileAsync(dto.FormFile);
         }
 
+        if (dto.CoverImage is not null)
+        {
+            var oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot",
+                song.CoverImagePath.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+            if (System.IO.File.Exists(oldFilePath))
+                System.IO.File.Delete(oldFilePath);
+
+            song.CoverImagePath = await SaveCoverImageAsync(dto.CoverImage);
+        }
+
         song.Title = dto.Title;
         song.Description = dto.Description;
         song.Duration = dto.Duration ?? song.Duration;
@@ -141,6 +152,24 @@ public class SongService : ISongService
         }
 
         return $"/Songs/{uniqueFileName}";
+    }
+
+    private async Task<string> SaveCoverImageAsync(IFormFile file)
+    {
+        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "CoverImages");
+
+        if (!Directory.Exists(uploadsFolder))
+            Directory.CreateDirectory(uploadsFolder);
+
+        var uniqueFileName = $"{Guid.NewGuid()}_{file.FileName}";
+        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        return $"/CoverImages/{uniqueFileName}";
     }
 
 }
