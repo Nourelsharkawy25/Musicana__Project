@@ -13,6 +13,10 @@ public class Song
     public bool IsDeleted { get; set; }
     public string? CoverImagePath { get; set; }
     public int PlayCount { get; private set; }
+    // Nullable FK — Song can exist without Album
+    public int? AlbumId { get; set; }
+    public Album? Album { get; set; }
+
     public List<Musician_Song> musician_Songs { get; set; }
     public void IncrementPlayCount() => PlayCount++;
 }

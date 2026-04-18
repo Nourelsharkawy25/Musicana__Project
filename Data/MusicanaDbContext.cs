@@ -13,6 +13,7 @@ public class MusicanaDbContext : DbContext
     public DbSet<Instrument> Instruments { get; set; }
     public DbSet<Musician_Song> Musician_Songs { get; set; }
     public DbSet<Musician_Instrument> Musician_Instruments { get; set; }
+    public DbSet<Album> Albums { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,5 +23,6 @@ public class MusicanaDbContext : DbContext
         modelBuilder.Entity<Song>().HasQueryFilter(s => s.IsDeleted == false);
         modelBuilder.Entity<Musician>().HasQueryFilter(s => s.IsDeleted == false);
         modelBuilder.Entity<Instrument>().HasQueryFilter(s => s.IsDeleted == false);
+        modelBuilder.Entity<Album>().HasQueryFilter(a => a.IsDeleted == false);
     }
 }

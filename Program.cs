@@ -39,6 +39,7 @@ builder.Services.SongServices();
 builder.Services.Song_MusicianService();
 builder.Services.InstrumentServices();
 builder.Services.Musician_InstrumentServices();
+builder.Services.AlbumServices();
 
 
 builder.Services.AddHttpContextAccessor();
